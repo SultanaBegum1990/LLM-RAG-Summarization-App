@@ -1,44 +1,56 @@
-Webpage Summarizer App
-A Streamlit-based web application that extracts text from a webpage or user input and summarizes it using Hugging Face Transformers like BART, T5, Pegasus, and LLaMA.
+# 📝 Webpage Summarizer App
 
-🔍 Features
-🌐 Summarize content from any article URL.
+A **Streamlit-based web app** that extracts and summarizes content from webpages or custom text using **Hugging Face Transformers** models.
 
-📄 Summarize manually pasted text.
+---
 
-🤖 Choose from multiple state-of-the-art Hugging Face summarization models.
+## 🔍 Features
 
-⚡ GPU support (if available) for faster inference.
+- 🌐 Summarize any article URL.
+- ✍️ Summarize user-pasted text.
+- 🧠 Choose from popular Hugging Face models (BART, T5, Pegasus, LLaMA, etc.).
+- ⚡ GPU-compatible (if available).
 
-🚀 Demo
-Run the app locally and access it at http://localhost:8501
+---
 
-🧠 Supported Models
+## 📦 Supported Models
 
-Model Name	Hugging Face ID
-BART	facebook/bart-large-cnn
-T5	t5-base
-Pegasus	google/pegasus-xsum
-LLaMA 2 (7B)	meta-llama/Llama-2-7b-hf
-You can expand this list by adding any summarization-capable model from Hugging Face.
+| Display Name                 | Hugging Face Model ID              |
+|-----------------------------|------------------------------------|
+| BART                        | `facebook/bart-large-cnn`         |
+| T5 Base                     | `t5-base`                          |
+| Pegasus XSum                | `google/pegasus-xsum`             |
+| Falcon Summarizer           | `Falconsai/text_summarization`    |
+| Meeting Summary             | `knkarthick/MEETING_SUMMARY`      |
+| LLaMA 2 (7B HF)             | `meta-llama/Llama-2-7b-hf`         |
 
-⚙️ Setup Instructions
-1. Clone the repository
-bash
-Copy
-Edit
+You can easily add more Hugging Face models to this list in the app code.
+
+---
+
+## 🚀 Getting Started
+
+### 1. Clone the Repository
+
+```bash
 git clone https://github.com/yourusername/webpage-summarizer-app.git
 cd webpage-summarizer-app
-2. Create and activate a virtual environment
+2. Create and Activate a Virtual Environment
 bash
 Copy
 Edit
 python -m venv venv
-# Windows
+On Windows:
+bash
+Copy
+Edit
 venv\Scripts\activate
-# macOS/Linux
+On macOS/Linux:
+bash
+Copy
+Edit
 source venv/bin/activate
-3. Install dependencies
+3. Install Dependencies
 bash
 Copy
 Edit
@@ -49,36 +61,59 @@ bash
 Copy
 Edit
 pip install streamlit transformers torch newspaper3k
-4. Run the app
+4. Run the App
 bash
 Copy
 Edit
 streamlit run app.py
-📦 Project Structure
+🌐 Using the App
+Open http://localhost:8501 in your browser.
+
+Choose to summarize from a webpage URL or paste text.
+
+Select a summarization model from the dropdown.
+
+Click Summarize and view the result.
+
+🧠 Notes
+Larger models like LLaMA may need a Hugging Face access token and significant RAM/GPU.
+
+You can swap or add new models in the model_options dictionary in app.py.
+
+📁 Project Structure
 bash
 Copy
 Edit
 webpage-summarizer-app/
-│
-├── app.py                # Main Streamlit application
-├── requirements.txt      # Python dependencies
-└── README.md             # Project documentation
-💡 Usage
-Open the app in your browser.
+├── app.py              # Main Streamlit app
+├── requirements.txt    # Python dependencies
+└── README.md           # This file
+🛠 Troubleshooting
+ModuleNotFoundError: Run pip install for any missing library.
 
-Choose between URL or text input.
+PermissionError on activation (Windows PowerShell): Run Set-ExecutionPolicy RemoteSigned in PowerShell as admin.
 
-Select your preferred summarization model.
-
-Click to generate the summary.
-
-Enjoy the result!
-
-⚠️ Notes
-If using large models like LLaMA, ensure you have enough memory/GPU.
-
-Some models may require a Hugging Face token for access (e.g., LLaMA-2).
-
-📖 License
+📜 License
 MIT License
 
+✨ Credits
+Built with:
+
+Streamlit
+
+Hugging Face Transformers
+
+Newspaper3k
+
+sql
+Copy
+Edit
+
+✅ **Tip**: Paste this into your `README.md` file in the root of your repo.  
+Then commit and push:
+
+```bash
+git add README.md
+git commit -m "Add full README with code blocks"
+git push
+Let me know if you'd like me to help add a screenshot, deploy to Hugging Face Spaces, or include GPU setup tips!
